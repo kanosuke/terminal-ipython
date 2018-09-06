@@ -13,12 +13,12 @@ function! terminalipython#start_ipython()
 endfunction
 
 function! terminalipython#get_block_first_line()
-    let firstline = searchpos("#%%", "bWnc")[0]
+    let firstline = searchpos("# %%", "bWnc")[0]
     return firstline
 endfunction
 
 function! terminalipython#get_block_last_line()
-    let lastline = searchpos("#%%", "Wnc")[0]
+    let lastline = searchpos("# %%", "Wnc")[0]
     return lastline
 endfunction
 
