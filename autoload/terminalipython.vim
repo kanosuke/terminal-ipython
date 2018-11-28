@@ -23,10 +23,12 @@ function! terminalipython#get_block_last_line()
 endfunction
 
 function! terminalipython#send_lines(line1, line2)
-    let @* = join(getline(a:line1, a:line2), "\n") . "\n"
-    call term_sendkeys("!ipython", "%paste")
+    let expr = join(getline(a:line1, a:line2), "\n") . "\n"
+    call term_sendkeys("!ipython", "%cpaste\n")
     call term_wait("!iptyhon")
-    call term_sendkeys("!ipython", "\r")
+    call term_sendkeys("!ipython", expr)
+    call term_wait("!iptyhon")
+    call term_sendkeys("!ipython", "--\n")
 endfunction
 
 let &cpo = s:save_cpo
