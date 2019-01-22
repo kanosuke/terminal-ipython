@@ -7,10 +7,12 @@ let g:loaded_terminalipython = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+command! StartIpython call terminalipython#ipython_start()
 command! Sendline call terminalipython#ipython_sendline()
 command! SendBlock call terminalipython#ipython_sendblock()
 command! -range SendSelection <line1>,<line2>call terminalipython#ipython_sendselection()
-let mapleader = " "
+
+nnoremap <leader>p :StartIpython<CR>
 nnoremap <leader>l :Sendline<CR>j
 nnoremap <leader>b :SendBlock<CR>
 nnoremap <leader>s :SendSelection<CR>

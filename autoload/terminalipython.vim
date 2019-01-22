@@ -57,7 +57,7 @@ function! terminalipython#ipython_sendselection() range
 	call s:ipython_sendcpastesentence(lines)
 endfunction
 
-function! terminalipython#start_ipython()
+function! terminalipython#ipython_start()
     vert term ipython
     wincmd l
 endfunction
