@@ -59,6 +59,7 @@ endfunction
 
 function! terminalipython#ipython_start()
     vert term ipython
+	sleep 20m
     wincmd l
 endfunction
 

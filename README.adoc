@@ -1,0 +1,27 @@
+= terminal-ipython
+
+Vim plugin for ipython on vim-terminal. +
+
+* Start ipython on vim-terminal leftside.
+* Send current line to ipython with %cpaste -q.
+* Send block (between # %% and # %%) to ipython with %cpaste -q.
+* Send selection line to ipython with %cpaste -q.
+
+== Install
+
+Install by Vundle. +
+Add .vimrc
+
+* Plugin 'kanosuke/terminal-ipython'
+
+
+== Key map
+
+* nnoremap <leader>p :StartIpython<CR>
+* nnoremap <leader>l :Sendline<CR>j
+* nnoremap <leader>b :SendBlock<CR>
+* nnoremap <leader>s :SendSelection<CR>
+* vnoremap <leader>s :SendSelection<CR>
+
+== Example
+image:example.gif["Example screenshot", width=640,link="example.gif"]
